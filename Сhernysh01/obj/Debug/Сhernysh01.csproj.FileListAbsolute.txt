@@ -1,0 +1,16 @@
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\bin\Debug\Сhernysh01.exe.config
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\bin\Debug\Сhernysh01.exe
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\bin\Debug\Сhernysh01.pdb
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\MainWindow.g.cs
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\App.g.cs
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\Сhernysh01_MarkupCompile.cache
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\Сhernysh01_MarkupCompile.lref
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\MainWindow.baml
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\Сhernysh01.g.resources
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\Сhernysh01.Properties.Resources.resources
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\Сhernysh01.csproj.GenerateResource.cache
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\Сhernysh01.csproj.CoreCompileInputs.cache
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\Сhernysh01.exe
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\Сhernysh01.pdb
+C:\Users\King\Desktop\CSharp-KMA\Сhernysh01\obj\Debug\Сhernysh01.csprojAssemblyReference.cache
