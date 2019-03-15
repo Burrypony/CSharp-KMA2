@@ -13,6 +13,7 @@ namespace Сhernysh01
         private string _email;
         private DateTime _dob;
 
+
         public string FirstName
         {
             get
@@ -81,6 +82,152 @@ namespace Сhernysh01
             {
                 string[] znakiZadiaka = new[] { "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig" };
                 return znakiZadiaka[(DOB.Year - 1876) % 12];
+            }
+        }
+
+        public string WesternSign
+        {
+            get
+            {
+                if (DOB.Month == 1)
+                {
+                    if (DOB.Day > 20)
+                    {
+                        return "Aquarius";
+                    }
+                    else
+                    {
+                        return "Caprion";
+                    }
+                }
+                else if (DOB.Month == 2)
+                {
+                    if (DOB.Day > 20)
+                    {
+                        return "Fish";
+
+                    }
+                    else
+                    {
+                        return "Aquarius";
+                    }
+                }
+                else if (DOB.Month == 3)
+                {
+                    if (DOB.Day > 20)
+                    {
+                        return "Aries";
+                    }
+                    else
+                    {
+                        return "Fish";
+                    }
+                }
+                else if (DOB.Month == 4)
+                {
+                    if (DOB.Day > 20)
+                    {
+                        return "Taurus";
+                    }
+                    else
+                    {
+                        return "Aries";
+                    }
+
+                }
+                else if (DOB.Month == 5)
+                {
+                    if (DOB.Day > 20)
+                    {
+                        return "Twin";
+                    }
+                    else
+                    {
+                        return "Taurus";
+                    }
+                }
+                else if (DOB.Month == 6)
+                {
+                    if (DOB.Day > 21)
+                    {
+                        return "Cancer";
+                    }
+                    else
+                    {
+                        return "Twin";
+                    }
+
+                }
+                else if (DOB.Month == 7)
+                {
+                    if (DOB.Day > 22)
+                    {
+                        return "Lion";
+                    }
+                    else
+                    {
+                        return "Cancer";
+                    }
+                }
+                else if (DOB.Month == 8)
+                {
+                    if (DOB.Day > 23)
+                    {
+                        return "Virgo";
+                    }
+                    else
+                    {
+                        return "Lion";
+                    }
+                }
+                else if (DOB.Month == 9)
+                {
+                    if (DOB.Day > 22)
+                    {
+                        return "Libra";
+                    }
+                    else
+                    {
+                        return "Virgo";
+                    }
+                }
+                else if (DOB.Month == 10)
+                {
+                    if (DOB.Day > 23)
+                    {
+                        return "Scorpio";
+                    }
+                    else
+                    {
+                        return "Libra";
+                    }
+                }
+                else if (DOB.Month == 11)
+                {
+                    if (DOB.Day > 22)
+                    {
+                        return "Sagittarius";
+                    }
+                    else
+                    {
+                        return "Scorpio";
+                    }
+                }
+                else if (DOB.Month == 12)
+                {
+                    if (DOB.Day > 21)
+                    {
+                        return "Capricorn";
+                    }
+                    else
+                    {
+                        return "Sagittarius";
+                    }
+                }
+                else
+                {
+                    return "Error";
+                }
             }
         }
 

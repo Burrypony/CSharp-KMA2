@@ -19,6 +19,7 @@ namespace Сhernysh01
         private DateTime _dob;
 
         private readonly string _chineseGoroscop;
+        private readonly string _westernGoroscop;
 
 
         public string FirstName
@@ -78,11 +79,19 @@ namespace Сhernysh01
             }
         }
 
+        public string WesternGoroscop
+        {
+            get
+            {
+                return _person == null ? "" : _person.WesternSign;
+            }
+        }
+
         public bool IsProceedEnabled
         {
             get
             {
-                return !string.IsNullOrEmpty(FirstName);
+                return !string.IsNullOrEmpty(FirstName)&&!string.IsNullOrEmpty(LastName)&&!string.IsNullOrEmpty(Email);
             }
         }
 
@@ -116,7 +125,11 @@ namespace Сhernysh01
             _person = new Person(FirstName, LastName, Email, DOB);
             // MessageBox.Show( FirstName );
             OnPropertyChanged( "FirstName" );
-            OnPropertyChanged("ChineseGoroscop");
+            OnPropertyChanged("LastName");
+            OnPropertyChanged("Email");
+            /* OnPropertyChanged("ChineseGoroscop");
+             OnPropertyChanged("WesternGoroscop");*/
         }
+
     }
 }
