@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Сhernysh01
 {
@@ -12,7 +9,6 @@ namespace Сhernysh01
         private string _lastname;
         private string _email;
         private DateTime _dob;
-
 
         public string FirstName
         {
@@ -46,9 +42,7 @@ namespace Сhernysh01
             }
             set
             {
-                // check value
-                // if value is ok _email = value
-                // else raise Exception
+                _email = value;
             }
         }
 
@@ -63,17 +57,6 @@ namespace Сhernysh01
                 _dob = value;
             }
         }
-
-        public bool IsAdult
-        {
-            get
-            {
-                // insert age check
-                // DOB
-                return false;
-            }
-        }
-
         public string ChineeseSign
         {
             get
@@ -235,6 +218,9 @@ namespace Сhernysh01
             LastName = lastname;
             Email = email;
             DOB = dob;
+
+            validEmail(email);
+            validateDate(dob);
         }
 
         public Person(string firstname, string lastname, string email)
@@ -242,6 +228,8 @@ namespace Сhernysh01
             FirstName = firstname;
             LastName = lastname;
             Email = email;
+
+            validEmail(email);
         }
 
         public Person(string firstname, string lastname, DateTime dob)
@@ -249,7 +237,32 @@ namespace Сhernysh01
             FirstName = firstname;
             LastName = lastname;
             DOB = dob;
+
+            validateDate(dob);
         }
 
+        private void validEmail(string email)
+        {
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(email);
+            if (!match.Success)
+            {
+                throw new EmailValidaion("Incorrect email " + email);
+            }
+        }
+
+        private void validateDate(DateTime date)
+        {
+            if (date > DateTime.Today)
+            {
+                throw new BornValidation(date);
+            }
+            
+            if (DateTime.Today.Year - date.Year >= 135)
+            {
+                throw new BornValidation(date);
+            }
+                
+        }
     }
 }

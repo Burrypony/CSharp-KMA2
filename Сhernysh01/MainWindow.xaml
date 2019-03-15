@@ -10,28 +10,34 @@
         <local:MainViewModel/>
     </Window.DataContext>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="28*"/>
+            <ColumnDefinition Width="71*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="97*"/>
             <RowDefinition Height="322*"/>
         </Grid.RowDefinitions>
-        <DatePicker Name="DOB" HorizontalAlignment="Left" Margin="514,53,0,0" VerticalAlignment="Top" Text="{Binding DOB, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, TargetNullValue=''}"/>
-        <TextBlock  Name="tbSettingText" HorizontalAlignment="Left" Margin="0,147,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="30" Width="782" Grid.Row="1"/>
-        <TextBlock  Name="ChineseGoroscop" HorizontalAlignment="Left" Margin="0,112,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="30" Width="782" Grid.Row="1" Text="{Binding ChineseGoroscop, Mode=OneWay}"/>
-        <TextBlock  Name="WesternGoroscop" HorizontalAlignment="Left" Text="{Binding WesternGoroscop, Mode=OneWay}" Margin="0,182,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="30" Width="782" Grid.Row="1"/>
-        <Label Content="Please, select your date of birth" HorizontalAlignment="Left" Margin="514,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.994,-0.11"/>
+        <DatePicker Name="DOB" HorizontalAlignment="Left" Margin="290,53,0,0" VerticalAlignment="Top" Text="{Binding DOB, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, TargetNullValue=''}" Grid.Column="1"/>
+        <TextBlock  Name="IsAdult" HorizontalAlignment="Left" Margin="0,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top"
+          Text="{Binding IsAdult, Mode=OneWay}" Height="30" Width="782" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <TextBlock  Name="ChineseGoroscop" HorizontalAlignment="Left" Margin="0,225,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="30" Width="782" Grid.Row="1" Text="{Binding ChineseGoroscop, Mode=OneWay}" Grid.ColumnSpan="2"/>
+        <TextBlock  Name="WesternGoroscop" HorizontalAlignment="Left" Text="{Binding WesternGoroscop, Mode=OneWay}" Margin="0,195,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="30" Width="782" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Label Content="Please, select your date of birth" HorizontalAlignment="Left" Margin="290,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.994,-0.11" Grid.Column="1"/>
         <Label Content="Please, write your name" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="144"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="20,53,0,0" TextWrapping="Wrap" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" />
-        <Label Content="Please, write your last name" HorizontalAlignment="Left" Margin="163,22,0,0" VerticalAlignment="Top" Width="159"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="173,53,0,0" TextWrapping="Wrap" Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Please, write your email" HorizontalAlignment="Left" Margin="327,22,0,0" VerticalAlignment="Top" Width="159"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="337,53,0,0" TextWrapping="Wrap" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="0,217,0,0" Grid.Row="1" VerticalAlignment="Top" Width="727" Text="{Binding FirstName, Mode=OneWay}" IsReadOnly="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="0,243,0,0" Grid.Row="1" VerticalAlignment="Top" Width="727"
-          Text="{Binding LastName, Mode=OneWay}" IsReadOnly="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="0,269,0,0" Grid.Row="1" VerticalAlignment="Top" Width="727"
-          Text="{Binding Email, Mode=OneWay}" IsReadOnly="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="0,269,0,0" Grid.Row="1" VerticalAlignment="Top" Width="727"
-          Text="{Binding DOB, Mode=OneWay}" IsReadOnly="True"/>
-        <Button Content="Proceed" HorizontalAlignment="Left" Margin="556,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="78" Command="{Binding ProceedCommand}" IsEnabled="{Binding IsProceedEnabled}" />
+        <Label Content="Please, write your last name" HorizontalAlignment="Left" Margin="163,22,0,0" VerticalAlignment="Top" Width="159" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="173,53,0,0" TextWrapping="Wrap" Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Label Content="Please, write your email" HorizontalAlignment="Left" Margin="103,22,0,0" VerticalAlignment="Top" Width="159" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,53,0,0" TextWrapping="Wrap" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Margin="0,94,0,0" Grid.Row="1" VerticalAlignment="Top" Width="727" Text="{Binding FirstName, Mode=OneWay}" IsReadOnly="True" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="0,112,0,0" Grid.Row="1" VerticalAlignment="Top" Width="727"
+          Text="{Binding LastName, Mode=OneWay}" IsReadOnly="True" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="0,147,0,0" Grid.Row="1" VerticalAlignment="Top" Width="727"
+          Text="{Binding Email, Mode=OneWay}" IsReadOnly="True" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="0,129,0,0" Grid.Row="1" VerticalAlignment="Top" Width="727"
+          Text="{Binding DOB, Mode=OneWay}" IsReadOnly="True" Grid.ColumnSpan="2"/>
+        <Button Content="Proceed" HorizontalAlignment="Left" Margin="332,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="78" Command="{Binding ProceedCommand}" IsEnabled="{Binding IsProceedEnabled}" Grid.Column="1" />
+        <TextBlock HorizontalAlignment="Left" Margin="0,255,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="30" Width="782" Grid.Row="1" Text="{Binding IsBirthday, Mode=OneWay}" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

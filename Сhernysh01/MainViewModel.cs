@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -17,9 +14,6 @@ namespace Сhernysh01
         private string _lastname;
         private string _email;
         private DateTime _dob = DateTime.Now;
-
-        private readonly string _chineseGoroscop;
-        private readonly string _westernGoroscop;
 
 
         public string FirstName
@@ -44,6 +38,7 @@ namespace Сhernysh01
             set
             {
                 _lastname = value;
+                OnPropertyChanged("IsProceedEnabled");
             }
         }
 
@@ -69,6 +64,7 @@ namespace Сhernysh01
             set
             {
                 _email = value;
+                OnPropertyChanged("IsProceedEnabled");
             }
         }
 
@@ -88,11 +84,43 @@ namespace Сhernysh01
             }
         }
 
+        public string IsAdult
+        {
+            get
+            {
+                if ((DateTime.Today.Year - _dob.Year) >= 18)
+                {
+                    return "Is adult";
+                }
+                else
+                {
+                    return "Not adult";
+                }
+            }
+        }
+
+        public string IsBirthday
+        {
+            get
+            {
+                if ((DateTime.Today.Month == _dob.Month) && (DateTime.Today.Day == _dob.Day))
+                {
+                   return "HAPPY BIRTHDAY !!!!";
+                }
+                else
+                {
+                    return "I hope you have a birthday soon";
+                }
+            }
+        }
+
+
+
         public bool IsProceedEnabled
         {
             get
             {
-                return !string.IsNullOrEmpty(FirstName);
+                return !string.IsNullOrEmpty(FirstName)&&!string.IsNullOrEmpty(LastName) && !string.IsNullOrEmpty(Email);
             }
         }
 
@@ -121,16 +149,33 @@ namespace Сhernysh01
             ProceedCommand = new RelayCommand(new Action<object>(ShowInfo));
         }
 
-        public void ShowInfo(object obj)
+        public async void ShowInfo(object obj)
         {
-            _person = new Person(FirstName, LastName, Email, DOB);
-            // MessageBox.Show( FirstName );
-            OnPropertyChanged( "FirstName" );
-            OnPropertyChanged("LastName");
-            OnPropertyChanged("Email");
-            OnPropertyChanged("ChineseGoroscop");
-            OnPropertyChanged("WesternGoroscop");  
-        }
+            await Task.Run((() =>
+            {
+                try
+                {
 
-    }
+                    _person = new Person(FirstName, LastName, Email, DOB);
+                    OnPropertyChanged( "FirstName" );
+                    OnPropertyChanged("LastName");
+                    OnPropertyChanged("Email");
+                    OnPropertyChanged("DOB");
+                    OnPropertyChanged("IsAdult");
+                    OnPropertyChanged("IsBirthday");
+                    OnPropertyChanged("ChineseGoroscop");
+                    OnPropertyChanged("WesternGoroscop");
+                }
+                catch (EmailValidaion e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                catch (BornValidation e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+             }));
+                }
+
+}
 }

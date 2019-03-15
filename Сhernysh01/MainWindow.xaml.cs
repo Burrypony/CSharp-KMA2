@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Сhernysh01
 {
@@ -25,23 +12,7 @@ namespace Сhernysh01
         {
             InitializeComponent();
         }
-
-        private void OutputAge( int age )
-        {
-            Dispatcher.BeginInvoke(new ThreadStart(() => tbSettingText.Text ="Your age is:" + age.ToString()));
-        }
-
-        private void OutputWesternSign(string sign)
-        {
-            Dispatcher.BeginInvoke(new ThreadStart(() => WesternGoroscop.Text = "Your Western sing is:" + sign.ToString()));
-        }
-
-        private void OutputChineseSign(string sign)
-        {
-            Dispatcher.BeginInvoke(new ThreadStart(() => ChineseGoroscop.Text = "Your Chinese sing is :" + sign));
-        }
-
-        private void CalculateAge( DateTime dob )
+        /*private void CalculateAge( DateTime dob )
         {
             DateTime currentDate = DateTime.Today;
             int currentMonth = currentDate.Month;
@@ -67,7 +38,7 @@ namespace Сhernysh01
                 MessageBox.Show("You are too old for this, please choose your corect date of birth");
                 return;
             }
-        }
+        }*/
 
         private async void MonthlyCalendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -76,7 +47,7 @@ namespace Сhernysh01
 
             // CalculateAge((DateTime)DOB_Calendar.SelectedDate);
         }
-
+       
 
     }
 
