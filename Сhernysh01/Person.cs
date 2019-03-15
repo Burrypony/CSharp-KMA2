@@ -60,9 +60,7 @@ namespace Сhernysh01
             }
             set
             {
-                // check value
-                // if value is ok _email = value
-                // else raise Exception
+                _dob = value;
             }
         }
 

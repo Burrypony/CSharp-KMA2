@@ -71,8 +71,8 @@ namespace Сhernysh01
 
         private async void MonthlyCalendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
-            DateTime selectedDate = (DateTime)DOB_Calendar.SelectedDate;
-            await Task.Run( () => CalculateAge(selectedDate) );
+            // DateTime selectedDate = (DateTime)DOB_Calendar.SelectedDate;
+            // await Task.Run( () => CalculateAge(selectedDate) );
 
             // CalculateAge((DateTime)DOB_Calendar.SelectedDate);
         }

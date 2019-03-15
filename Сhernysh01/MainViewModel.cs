@@ -16,7 +16,7 @@ namespace Сhernysh01
         private string _firstname;
         private string _lastname;
         private string _email;
-        private DateTime _dob;
+        private DateTime _dob = DateTime.Now;
 
         private readonly string _chineseGoroscop;
         private readonly string _westernGoroscop;
@@ -56,6 +56,7 @@ namespace Сhernysh01
             set
             {
                 _dob = value;
+                OnPropertyChanged("StartDate");
             }
         }
 
@@ -91,7 +92,7 @@ namespace Сhernysh01
         {
             get
             {
-                return !string.IsNullOrEmpty(FirstName)&&!string.IsNullOrEmpty(LastName)&&!string.IsNullOrEmpty(Email);
+                return !string.IsNullOrEmpty(FirstName);
             }
         }
 
@@ -127,8 +128,8 @@ namespace Сhernysh01
             OnPropertyChanged( "FirstName" );
             OnPropertyChanged("LastName");
             OnPropertyChanged("Email");
-            /* OnPropertyChanged("ChineseGoroscop");
-             OnPropertyChanged("WesternGoroscop");*/
+            OnPropertyChanged("ChineseGoroscop");
+            OnPropertyChanged("WesternGoroscop");  
         }
 
     }

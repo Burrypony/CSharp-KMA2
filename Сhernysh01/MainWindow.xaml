@@ -14,7 +14,7 @@
             <RowDefinition Height="97*"/>
             <RowDefinition Height="322*"/>
         </Grid.RowDefinitions>
-        <DatePicker x:Name="DOB_Calendar" HorizontalAlignment="Left" Margin="514,53,0,0" VerticalAlignment="Top" Text="{Binding DOB, UpdateSourceTrigger=PropertyChanged}"SelectedDate="{Binding EventItem.BirthDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <DatePicker Name="DOB" HorizontalAlignment="Left" Margin="514,53,0,0" VerticalAlignment="Top" Text="{Binding DOB, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, TargetNullValue=''}"/>
         <TextBlock  Name="tbSettingText" HorizontalAlignment="Left" Margin="0,147,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="30" Width="782" Grid.Row="1"/>
         <TextBlock  Name="ChineseGoroscop" HorizontalAlignment="Left" Margin="0,112,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="30" Width="782" Grid.Row="1" Text="{Binding ChineseGoroscop, Mode=OneWay}"/>
         <TextBlock  Name="WesternGoroscop" HorizontalAlignment="Left" Text="{Binding WesternGoroscop, Mode=OneWay}" Margin="0,182,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="30" Width="782" Grid.Row="1"/>
